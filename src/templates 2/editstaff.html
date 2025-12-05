@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<!--{% extends 'collegeindex.html' %}-->
+<!--{% block body %}-->
+<body>
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="post" action="/updatestaff">
+  <table id="customers">
+    <tr>
+      <td>NAME</td>
+      <td><input type="text" name="textfield" value="{{data[2]}}" required pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+    <tr>
+      <td>GENDER</td>
+      <td><input name="radiobutton" type="radio" value="Male"  {% if data[3]=='Male' %} checked {%endif%}/>
+        MALE
+        <input name="radiobutton" type="radio" value="Female" {% if data[3]=='Female' %} checked {%endif%}/>
+        FEMALE</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><input type="date" name="textfield2" value="{{data[4]}}" min="1950-01-01" max="2015-12-31" required/></td>
+    </tr>
+    <tr>
+      <td>PLACE</td>
+      <td><input type="text" name="textfield3" value="{{data[5]}}" pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td><input type="text" name="textfield4" value="{{data[6]}}" pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><input type="text" name="textfield5" value="{{data[7]}}" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <td>PHONENO</td>
+      <td><input type="text" name="textfield6" value="{{data[7]}}" required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td><input type="text" name="textfield7" value="{{data[9]}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td>QUALIFICATION</td>
+      <td><input type="checkbox" name="checkbox" value="Degree" {% if 'Degree' in data[10] %} checked {% endif %}/>Degree
+        <input type="checkbox" name="checkbox" value="PG" {% if 'PG' in data[10] %} checked {% endif %}/>PG</td>
+    </tr>
+
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="EDIT" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+</body>
+<!--</html>-->
+<!--{% endblock %}-->

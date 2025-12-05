@@ -1,0 +1,53 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'companyindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="managequestion">
+  <table width="200" border="1" class="table">
+    <tr>
+      <td colspan="7" scope="col">Test
+        <label></label>
+<select name="select">
+      {% for i in v %}
+      <option value="{{i['tid']}}">{{i['type']}}</option>
+      {% endfor %}
+      </select>
+        <input type="submit" name="Submit" value="Search" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Option1</th>
+      <th scope="col">Option2</th>
+      <th scope="col">Option3</th>
+      <th scope="col">Option4</th>
+      <th scope="col">Answer</th>
+    
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td scope="row">{{i['question']}}</td>
+      <td>{{i['option1']}}</td>
+      <td>{{i['option2']}}</td>
+      <td>{{i['option3']}}</td>
+      <td>{{i['option4']}}</td>
+      <td>{{i[answer]}}</td>
+      <td><p><a href="editquestion?id={{i['qid']}}">edit</a></p>
+      <p><a href="deleteqq?id={{i['qid']}}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="7" scope="row"><a href="addq">Add</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

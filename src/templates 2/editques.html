@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'companyindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="editqqq"><table id="customers">
+  <table width="200" border="1">
+    <!--<tr>-->
+      <!--<th scope="col">Test</th>-->
+      <!--<th scope="col"><label>-->
+   <!--<select name="select">-->
+      <!--{% for i in val %}-->
+      <!--<option value="{{i[0]}}">{{i[1]}}</option>-->
+      <!--{% endfor %}-->
+      <!--</select>-->
+      <!--</label></th>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row">Question</th>
+      <td><label>
+        <input type="text" name="textfield" value="{{data['question']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Option1</th>
+      <td><label>
+        <input type="text" name="textfield2"  value="{{data['option1']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Option2</th>
+      <td><label>
+        <input type="text" name="textfield3"  value="{{data['option2']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Option3</th>
+      <td><label>
+        <input type="text" name="textfield4"  value="{{data['option3']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Option4</th>
+      <td><label>
+        <input type="text" name="textfield5"  value="{{data['option4']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Answer</th>
+      <td><label>
+        <input type="text" name="textfield6"  value="{{data['answer']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

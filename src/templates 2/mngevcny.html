@@ -1,0 +1,34 @@
+
+{% extends 'companyindex.html' %}
+{% block body %}
+<body xmlns="http://www.w3.org/1999/html">
+
+<form id="form1" name="form1" method="post" action="/addv#about">
+  <table id="customers" class="table">
+    <tr>
+      <td width="69">POST</td>
+      <td width="92">QUALIFICATION</td>
+      <td width="50">SALARY RANGE</td>
+      <td width="50">EXPERIENCE</td>
+
+      <td width="153">&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{i['post']}}</td>
+      <td>{{i['qualification']}}</td>
+      <td>&nbsp;{{i['salary']}}</td>
+      <td>&nbsp;{{i['experience']}}</td>
+
+      <td><p><button><a href="editv?id={{i['vid']}}#about">Edit</a></button></p>
+        <p><button><a href="/deletev?id={{i['vid']}}#about"> Delete </a></button></p></td>
+      {% endfor %}
+    </tr>
+  </table>
+
+
+  <input type="submit" name="Submit" value="ADD VACCANCY" />
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

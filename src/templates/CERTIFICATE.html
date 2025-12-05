@@ -1,0 +1,155 @@
+<!--<%@page import="dbcon.dbcon"%>-->
+<!--<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+    <script type="text/javascript">
+
+function printSelection(node){
+
+    var content=node.innerHTML
+    var pwin=window.open('','print_content','width=800,height=800');
+
+    pwin.document.open();
+    pwin.document.write('<html><body onload="window.print()">'+content+'</body></html>');
+    pwin.document.close();
+
+    setTimeout(function(){pwin.close();},1000);
+}
+</script>
+<style type="text/css">
+#form1 #printtb table tr td strong {
+	font-size: large;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#form1 #printtb table tr td {
+	font-size: x-large;
+}
+#form1 #printtb table tr td {
+	font-size: larger;
+}
+#form1 #printtb table tr td {
+	font-size: xx-large;
+}
+#form1 #printtb table tr td {
+	font-family: Verdana, Geneva, sans-serif;
+}
+#form1 #printtb table tr td {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+}
+</style>
+</head>
+<!--<%-->
+    <!---->
+    <!--dbcon db = new dbcon();-->
+    <!--Connection con = db.getCon();-->
+    <!--Statement st = con.createStatement();-->
+    <!---->
+    <!--String id = "", score = "", date = "", gender = "", dept = "", name = "", regno = "";-->
+    <!--try {-->
+        <!--id = session.getAttribute("userid").toString();-->
+    <!--}-->
+    <!--catch(Exception ex) {-->
+        <!--id = request.getParameter("id");-->
+    <!--}-->
+    <!---->
+    <!--ResultSet rs = st.executeQuery("select students.name, students.gender, course.dept, students.reg_no, qrinfo.SCORE, qrinfo.DATE from students inner join course on course.id = students.course inner join qrinfo on qrinfo.SID = students.st_id where students.st_id = '"+id+"'");-->
+    <!--if(rs.next()) {-->
+        <!--if(rs.getString(2).equalsIgnoreCase("male"))-->
+            <!--gender = "He";-->
+        <!--else if(rs.getString(2).equalsIgnoreCase("female"))-->
+            <!--gender = "She";-->
+        <!--name = rs.getString(1);-->
+        <!--dept = rs.getString(3);-->
+        <!--regno = rs.getString(4);-->
+        <!--score = rs.getString(5);-->
+        <!--date = rs.getString(6);-->
+<!--%>-->
+<body>
+<form id="form1" name="form1" method="post" action="">
+<p align="center">
+  <a href="/adminhome">Home</a>
+</p>
+  <div  id="printtb">
+    <table width="631" border="0" align="center">
+      <tr>
+        <th colspan="2" scope="col"><img name="" src="../static/pics/st.jpg" width="500" height="369" alt="" /></th>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"> FACULTY OF BACHELOUR OF  SCIENCE </td>
+      </tr>
+
+
+      <tr>
+        <td  colspan="2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p align="justify"  style="line-height: 1.8;"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where it has been certified by duly appointed Examiners that</i></p>
+          <p align="justify"  style="line-height: 1.8;" > </p>
+          <div align="center"><b>{{dt['fname']}}  {{dt['lname']}}</b><i> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</i></div>
+          <i>
+            <div align="center">is qualified to receive</div>
+          </i>
+          <p></p>
+          <p align="justify"  style="line-height: 1.8;"></p>
+          <i>
+            <div align="center">the Degreee of Bachelor of Science(Bsc)<i> </i></div>
+          </i><i>
+              <div align="center">
+              <p>in Branch <b><i>{{dt['regno']}}</i></b><i></i></p>
+              </div>
+              </i><i>
+                <div align="center">
+              <p><strong> {% if dt[3]=="Male" %} He{% endif %} {% if dt[3]=="Female" %} She{% endif %} </strong>she having been placed in First class</p>
+                  <p>at the Examination held in </p>
+
+                  <p><b>April 2020 </b>({{dt['college_name']}})</p>
+                  <p>The Senate of the University of Calicut hereby confers on               <p><strong> {% if dt[7]=="Male" %} his{% endif %} {% if dt[7]=="Female" %} her{% endif %} </strong></p>
+</p>
+                  <p>the degree of</p>
+                  <p><i><b>Bachelor of Science</b></i> </p>
+                  <p>&nbsp;</p>
+                  <p>with all the Rights,privileges and Honours thereunto appertaining.Given under the seal of the University </p>
+                  <p>&nbsp; </p>
+                </div>
+                </i>
+          <p></p>
+          <p align="justify"  style="line-height: 1.8;"><i><br />
+          </i></p></td>
+      </tr>
+      <tr>
+        <td width="266">&nbsp;</td>
+        <td width="224">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><img name="" src="../static/QR/{{im}}" alt="no Image" width="100" height="100" align="left"/></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="219" align="right"><p><font size="2">CALICUT UNIVERSITY P.O.</font></p>
+          <p><font size="2">Kerala,INDIA</font></p>
+          <p><font size="2">PIN-673625</font></p>
+          <p><font size="2">Date 17/3/2019 </font></p>
+        <p>&nbsp;</p></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../static/pics/sig.PNG" width="100" height="100" align="texttop" />&nbsp;&nbsp;&nbsp;&nbsp;<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vice-chancellor</p></td>
+        <td width="127" align="center"><p><br />
+            <img name="" src="../static/pics/log.PNG" width="70" height="70" alt="" /></p>
+        <p>&nbsp;</p></td>
+      </tr>
+    </table>
+  </div>
+
+  <p align="center">
+    <strong>
+    <input type="submit" name="button" id="button" value="SAVE " onclick="printSelection(document.getElementById('printtb'));return false" />
+  </strong>  </p>
+</form>
+</body>
+</html>

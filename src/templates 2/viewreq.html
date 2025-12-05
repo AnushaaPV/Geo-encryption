@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'companyindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" id="customers" CLASS="table">
+
+    <tr>
+      <th scope="col">Student </th>
+      <th scope="col">Regno</th>
+        <th scope="col">Graduation</th>
+      <th scope="col">Month and year</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Job</th>
+      <th scope="col">Qualification</th>
+    
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in v %}
+    <tr>
+      <td scope="row">{{i['fname']}} {{i['lname']}}</td>
+      <td>{{i['student']}}</td>
+      <td>{{i['regno']}}</td>
+      <td>{{i['graduation']}}</td>
+      <td>{{i['month&year']}}</td>
+      <td>{{i['gender']}}</td>
+      <td>{{i['job']}}</td>
+      <td>{{i['qualification']}}</td>
+      <td><p><a href="acceptreq?id={{i['reid']}}">Accept</a></p>
+      <p><a href="rejectreq?id={{i['reid']}}">Reject</a></p></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

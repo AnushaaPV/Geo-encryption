@@ -1,0 +1,28 @@
+
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form action="/acceptcollege" method="post">
+  <table class="table table-hover">
+  <tr>
+    <td>COLLEGE_NAME</td>
+    <td>PLACE</td>
+    <td>ADDRESS</td>
+    <td>PHONENO</td>
+    <td></td>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{i['college_name']}}</td>
+    <td>{{i['place']}}</td>
+    <td>&nbsp;{{i['address']}}</td>
+    <td>&nbsp;{{i['phoneno']}}</td>
+    <td><a href="/acceptcollege?id={{i['login_id']}}">Accept</a>
+    <a href="/rejectcollege?id={{i['login_id']}}">Reject</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form action="/searchcertificate#about" method="post">
+<table id="customers" bgcolor="black">
+  <tr>
+    <td colspan="2">College</td>
+    <td colspan="2"><select name="select">
+      {% for i in data %}
+      <option value ="{{i['login_id']}}" {% if i[college_id]|string== sub %} selected {% endif %}>{{i['college_name']}}</option>
+      {% endfor %}
+    </select>    </td>
+    <td colspan="4"><input type="submit" name="Submit" value="Search" /></td>
+    </tr>
+  <tr>
+    <td width="37">Name</td>
+    <td width="44">RegNo</td>
+    <td width="67">Graduation</td>
+    <td width="71">Department</td>
+    <td width="45">Gender</td>
+    <td width="101">Month and Year</td>
+    <td width="36">Photo</td>
+    <td width="74">&nbsp;</td>
+  </tr>
+  {% for i in val %}
+  <tr>
+    <td>{{i['fname']}} {{i['lname']}}</td>
+    <td>{{i['regno']}}</td>
+    <td>{{i['graduation']}}</td>
+    <td>&nbsp;{{i['department_name']}}</td>
+    <td>&nbsp;{{i['gender']}}</td>
+    <td>&nbsp;{{i['month&year']}}</td>
+    <td>&nbsp;<img src="../static/student/{{i['photo']}}" width="100" height="100"></td>
+    <td><a href="/generate?id={{i['studentid']}}#about">Generate</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/insert_dept">
+<table class="table table-hover">
+    <tr>
+      <td>COLLEGE</td>
+      <td><select name="COLLEGES">&nbsp;
+
+        {% for i in data %}
+        <option value="{{i['college_id']}}">{{i['college_name']}}</option>
+
+        {% endfor %}
+
+      </select></td>
+    </tr>
+    <tr>
+      <td>DEPARTMENT</td>
+      <td><input name="dept" type="text" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="ADD" /></td>
+    </tr>
+  </table>
+
+</form>
+</body>
+{% endblock %}

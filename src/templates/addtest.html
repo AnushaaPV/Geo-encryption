@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'companyindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="addtest">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">Vaccancy</th>
+      <td scope="col"><label>
+   <select name="select">
+      {% for i in val %}
+      <option value="{{i['vid']}}">{{i['post']}}</option>
+      {% endfor %}
+      </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Test type</th>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Details</th>
+      <td><label>
+        <input type="text" name="textfield2" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row">Option2</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield3" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <!--<th scope="row">Option3</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield4" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <!--<th scope="row">Option4</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield5" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <!--<th scope="row">Answer</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield6" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+      <td colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

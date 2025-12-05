@@ -1,0 +1,36 @@
+
+{% extends 'companyindex.html' %}
+{% block body %}
+
+<body>
+<form action="/editvaccancy" method="post"><table id="customers">
+
+  <tr>
+    <td>JOB </td>
+    <td><input type="text" name="textfield" value="{{data['post']}}"/></td>
+  </tr>
+
+    <tr>
+    <td>QUALIFICATION </td>
+    <td><input type="text" name="textfield2" value="{{data['qualification']}}" /></td>
+  </tr>
+   <tr>
+    <td>EXPERIENCE </td>
+       <td><input type="text" name="textfield3"  value="{{data['experience']}}" /></td>
+  </tr>
+     <tr>
+    <td>SALARY </td>
+       <td><input type="text" name="textfield4"  value="{{data['salary']}}" /></td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="UPDATE" /></td>
+
+  </tr>
+</table>
+</form>
+</body>
+
+{% endblock %}
+

@@ -1,0 +1,35 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<!--{% extends 'studentindex.html' %}-->
+<!--{% block body %}-->
+<body>
+<form action="searchnotes#about" method="post">
+<table id="customers">
+  <tr>
+    <td>Subject
+      <select name="select">
+        {% for i in data %}
+         <option value ="{{i[0]}}" {% if i[0]|string== sub %} selected {% endif %}>{{i[1]}}</option>
+      {% endfor %}
+      </select>
+      <input type="submit" name="Submit" value="Search" /></td>
+  </tr>
+
+  <tr>
+    <td>Notes</td>
+  </tr>
+  {% for i in val %}
+  <tr>
+   <td><a href="static/notes/{{i[2]}}">{{i[2]}}</a> </td>
+  </tr>
+  {% endfor %}
+
+</table>
+</form>
+</body>
+<!--</html>-->
+<!--{% endblock %}-->

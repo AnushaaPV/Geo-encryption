@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<!--{% extends 'collegeindex.html' %}-->
+<!--{% block body %}-->
+<body xmlns="http://www.w3.org/1999/html">
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="post" action="/addstaff#about">
+  <table id="customers">
+    <tr>
+      <td width="69">NAME</td>
+      <td width="92">GENDER</td>
+      <td width="50">DOB</td>
+      <td width="105">ADDRESS</td>
+      <td width="80">PHONE</td>
+      <td width="72">EMAIL</td>
+      <td width="132">QUALIFICATION</td>
+      <td width="153">&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <td>&nbsp;{{i[4]}}</td>
+      <td>&nbsp;{{i[5]}}, {{i[6]}}, {{i[7]}}</td>
+      <td>&nbsp;{{i[8]}}</td>
+      <td>&nbsp;{{i[9]}}</td>
+      <td>&nbsp;{{i[10]}}</td>
+      <td><p><button><a href="editstaff?id={{i[1]}}#about">Edit</a></button></p>
+        <p><button><a href="/deletestaff?id={{i[1]}}"> Delete </a></button></p></td>
+      {% endfor %}
+    </tr>
+  </table>
+
+
+  <input type="submit" name="Submit" value="ADD STAFF" />
+</form>
+<p>&nbsp;</p>
+</body>
+<!--</html>-->
+<!--{% endblock %}-->

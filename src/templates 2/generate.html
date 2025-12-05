@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--{% extends 'adminindex.html' %}-->
+<!--{% block body %}-->
+<body>
+<form id="form1" name="form1" method="post" action="qr">
+  <table id="customers">
+    <tr>
+      <td>Score</td>
+      <td><select name="select">
+        <option>First class</option>
+        <option>Second class</option>
+        <option>Third class</option>
+        <option>Distinction</option>
+
+      </select>      </td>
+    </tr>
+    <!--<tr>-->
+      <!--<td colspan="2"><div align="center"><img name="" src="" width="32" height="32" alt="" /></div></td>-->
+    <!--</tr>-->
+    <tr>
+      <td>Name</td>
+      <td>{{val['fname']}}  {{val['lname']}}</td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><img src="../static/student/{{val['photo']}}" height="300" width="300"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="Generate" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+<!--{% endblock %}-->

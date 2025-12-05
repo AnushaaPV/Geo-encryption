@@ -1,0 +1,31 @@
+
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form action="/insertexamschedule" method="post">
+  <table class="table table-hover">
+  <tr>
+    <td>SUBJECT</td>
+    <td><select name="select">
+      {% for i in val %}
+      <option value="{{i['subjectid']}}">{{i['subjectname']}}</option>
+      {% endfor %}
+    </select>    </td>
+  </tr>
+  <tr>
+    <td>EXAM_DATE </td>
+    <td><input type="date" name="textfield" required /></td>
+  </tr>
+    <tr>
+    <td>EXAM_TIME </td>
+    <td><input type="text" name="textfield2" required /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="ADD" /></td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

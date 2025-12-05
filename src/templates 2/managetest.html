@@ -1,0 +1,42 @@
+ {% extends 'companyindex.html' %}
+ {% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="manage_test">
+  <table width="200" border="1"><table id="customers" class="table">
+    <tr>
+      <td colspan="7" scope="col">Vaccancy
+        <label></label>
+<select name="select">
+      {% for i in v %}
+      <option value="{{i['vid']}}">{{i['post']}}</option>
+      {% endfor %}
+      </select>
+        <input type="submit" name="Submit" value="Search" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="col">Test</th>
+      <th scope="col">Details</th>
+
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td scope="row">{{i['type']}}</td>
+      <td>{{i['details']}}</td>
+      <!--<td>{{i[4]}}</td>-->
+
+      <td>
+      <p><a href="deletetest?id={{i['tid']}}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="7" scope="row"><a href="addt">Add</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

@@ -1,0 +1,41 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'companyindex.html' %}
+{% block body %}
+
+<body>
+<table class="table">
+<form action="/addvaccancy" method="post"><table id="customers">
+
+  <tr>
+    <td>POST </td>
+    <td><input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" /></td>
+  </tr>
+
+    <tr>
+    <td>QUALIFICATION </td>
+    <td><input type="text" name="textfield2"  required pattern="[A-Z a-z.]{3,25}"/></td>
+  </tr>
+     <tr>
+    <td>SALARY </td>
+    <td><input type="text" name="textfield3"required /></td>
+  </tr>
+  <tr>
+    <td>EXPERIENCE </td>
+    <td><input type="text" name="textfield4"required  /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="ADD" /></td>
+  </tr>
+</table>
+</form>
+</body>
+
+<!--</html>-->
+{% endblock %}
+

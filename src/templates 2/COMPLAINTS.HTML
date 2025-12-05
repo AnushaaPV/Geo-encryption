@@ -1,0 +1,25 @@
+
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form action="" method="get">
+<table class="table table-hover">
+  <tr>
+    <td>COLLEGE NAME</td>
+    <td>COMPLAINT</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>&nbsp;{{i['college_name']}}</td>
+    <td>&nbsp;{{i['complaint']}}</td>
+    <td>{{i['date']}}</td>
+    <td><a href="reply?id={{i['comp_id']}}#about">Reply</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}
